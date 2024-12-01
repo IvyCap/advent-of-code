@@ -30,22 +30,22 @@ let r1_len = row1.len();
 
 let mut total_dist: i32 = 0;
 let mut i = 0;
-// println!("i  start: {}", i);
 
 while i < r1_len {
     let diff: i32;
     let r1_num = row1.pop().unwrap();
     let r2_num = row2.pop().unwrap();
-    if r1_num > r2_num {
-        diff = r1_num - r2_num
-    }else {
-        diff = r2_num - r1_num
-    }
+    diff = (r1_num - r2_num).abs();
+
+    // if r1_num > r2_num {
+    //     diff = r1_num - r2_num
+    // }else {
+    //     diff = r2_num - r1_num
+    // }
     total_dist += diff;
     
     println!("r1: {}, r2: {}, Diff: {}, Total: {}", r1_num, r2_num, diff, total_dist);
     i += 1;
-    // println!("i: {}", i)
 }
 
 println!("Total Distance: {}", total_dist);
