@@ -9,7 +9,7 @@ pub fn p1_read_file() -> String{
 
 }
 
-pub fn p1_parse_count(input: String) {
+pub fn p1_parse_count(input: &String) {
 
 let mut row1 = vec![];
 let mut row2 = vec![];
@@ -26,35 +26,35 @@ for line in input.as_str().lines() {
 
 row1.sort();
 row2.sort();
-let r1_len = row1.len();
 
 let mut total_dist: i32 = 0;
-let mut i = 0;
 
-while i < r1_len {
-    let diff: i32;
-    let r1_num = row1.pop().unwrap();
-    let r2_num = row2.pop().unwrap();
-    diff = (r1_num - r2_num).abs();
 
-    // if r1_num > r2_num {
-    //     diff = r1_num - r2_num
-    // }else {
-    //     diff = r2_num - r1_num
-    // }
-    total_dist += diff;
+let result: i32 = std::iter::zip(row1, row2).map(|(r1, r2)| {r1 - r2}.abs()).sum(); 
+
+total_dist += result;
+
+// let r1_len = row1.len();
+
+// let mut i = 0;
+
+// while i < r1_len {
+//     let diff: i32;
+//     let r1_num = row1.pop().unwrap();
+//     let r2_num = row2.pop().unwrap();
+//     diff = (r1_num - r2_num).abs();
+
+//     // if r1_num > r2_num {
+//     //     diff = r1_num - r2_num
+//     // }else {
+//     //     diff = r2_num - r1_num
+//     // }
+//     total_dist += diff;
     
-    println!("r1: {}, r2: {}, Diff: {}, Total: {}", r1_num, r2_num, diff, total_dist);
-    i += 1;
+//     // println!("r1: {}, r2: {}, Diff: {}, Total: {}", r1_num, r2_num, diff, total_dist);
+//     i += 1;
+// }
+
+println!("Total Part 1: {}", total_dist);
 }
 
-println!("Total Distance: {}", total_dist);
-println!("Correct Total: 1222801")
-}
-
-//     let input = "4 9
-// 5 5
-// 1 7
-// 7 1
-// 3 2"
-// ;
