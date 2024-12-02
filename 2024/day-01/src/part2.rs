@@ -2,7 +2,7 @@ use std::usize;
 
 
 
-pub fn part2(input: &String) {
+pub fn part2(input: &String) -> usize{
 
     let mut row1 = vec![];
     let mut row2 = vec![];
@@ -22,6 +22,8 @@ pub fn part2(input: &String) {
     let result: usize = row1.iter().map(|num1| {num1 * row2.iter().filter(|r| &num1 == r).count()}).sum();
 
     total_diff +=  result;
+    
+    total_diff
 
     // for num1 in &row1 {
     //     let mut num_times:i32 = 0;
@@ -36,6 +38,5 @@ pub fn part2(input: &String) {
     //     // println!("r1: {},  Times: {}, Times Diff: {}, Total: {}", num1, num_times, num_total_diff, total_diff);
     // }
     
-    println!("Total Part 2: {}", total_diff)
 
 }

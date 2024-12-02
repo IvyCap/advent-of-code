@@ -9,7 +9,7 @@ pub fn p1_read_file() -> String{
 
 }
 
-pub fn p1_parse_count(input: &String) {
+pub fn p1_parse_count(input: &String) -> i32 {
 
 let mut row1 = vec![];
 let mut row2 = vec![];
@@ -34,6 +34,8 @@ let result: i32 = std::iter::zip(row1, row2).map(|(r1, r2)| {r1 - r2}.abs()).sum
 
 total_dist += result;
 
+total_dist
+
 // let r1_len = row1.len();
 
 // let mut i = 0;
@@ -55,6 +57,5 @@ total_dist += result;
 //     i += 1;
 // }
 
-println!("Total Part 1: {}", total_dist);
 }
 
