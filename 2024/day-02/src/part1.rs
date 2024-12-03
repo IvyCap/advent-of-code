@@ -78,7 +78,7 @@ pub fn part1(input: String) {
 
     }
 
-    println!("Safe: {}", safe)
+    println!("Safe: {}, Correct: 686", safe)
 }
 
 fn inc_dec (f: i32, s: i32) -> IncDec{
