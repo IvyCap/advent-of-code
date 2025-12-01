@@ -37,14 +37,14 @@ pub fn part2(mem: String) {
         }else {
             do_dont = do_dont
         }
-    println!("DDNT: {}, num1 {}, num2 {}", tup.0, tup.1, tup.2);
-    println!("DODONT {:?}", do_dont);
+        println!("DDNT: {}, num1 {}, num2 {}", tup.0, tup.1, tup.2);
+        println!("DODONT {:?}", do_dont);
 
         if do_dont == DODONT::DO {
         total += tup.1 * tup.2
         }
     
-    println!("Running Total: {}", total)
+        println!("Running Total: {}", total)
     }
 
     println!("Total: {}", total)
